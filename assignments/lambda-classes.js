@@ -37,3 +37,32 @@ class Instructor extends Person {
 //     favLanguage: 'Spanish',
 //     catchPhrase: 'Don\'t forget the homies'
 // })
+
+class Student extends Person{
+    constructor(sAttrs) {
+        super(sAttrs);
+        this.previousBackground = sAttrs.previousBackground;
+        this.className = sAttrs.className;
+        this.favSubjects = sAttrs.favSubjects;
+    }
+
+    listsSubjects() {
+        return this.favSubjects;
+    }
+
+    PRAssignment(subj) {
+        return `${this.name} has submitted a PR for ${subj}`;
+    }
+
+    sprintChallenge(subj) {
+        return `${this.name} has begun sprint challenge on ${subj}`
+    }
+}
+
+// let raudel = new Student({
+//     name: 'Raudel',
+//     age: 22,
+//     location: 'Chicago',
+//     previousBackground: 'Graphic Designer',
+//     className: 'WBPT11',
+//     favSubjects: ['HTML', 'CSS', 'Javascript'],})
