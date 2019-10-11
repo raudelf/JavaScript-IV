@@ -29,14 +29,6 @@ class Instructor extends Person {
         return `${obj.name} receives a perfect score on ${subj}`
     }
 }
-// let pace = new Instructor({
-//     name: 'Pace',
-//     age: 28,
-//     location: 'California',
-//     specialty: 'Front-End Dev',
-//     favLanguage: 'Spanish',
-//     catchPhrase: 'Don\'t forget the homies'
-// })
 
 class Student extends Person{
     constructor(sAttrs) {
@@ -59,14 +51,6 @@ class Student extends Person{
     }
 }
 
-// let raudel2 = new Student({
-//     name: 'Raudel',
-//     age: 22,
-//     location: 'Chicago',
-//     previousBackground: 'Graphic Designer',
-//     className: 'WBPT11',
-//     favSubjects: ['HTML', 'CSS', 'Javascript'],})
-
 class ProjectManager extends Instructor {
     constructor(pmAttrs) {
         super(pmAttrs);
@@ -74,7 +58,41 @@ class ProjectManager extends Instructor {
         this.favInstructor = pmAttrs.favInstructor;
     }
     
-    standUp() {
-        
+    standUp(channel) {
+        return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+
+    debugsCode(obj, subj) {
+        return `${this.name} debugs ${obj.name}'s code on ${subj}.`
     }
 }
+
+let pace = new Instructor({
+    name: 'Pace',
+    age: 28,
+    location: 'California',
+    specialty: 'Front-End Dev',
+    favLanguage: 'Spanish',
+    catchPhrase: 'Don\'t forget the homies'
+})
+
+let raudel2 = new Student({
+    name: 'Raudel',
+    age: 22,
+    location: 'Chicago',
+    previousBackground: 'Graphic Designer',
+    className: 'WBPT11',
+    favSubjects: ['HTML', 'CSS', 'Javascript'],})
+
+let samir = new ProjectManager({
+    name: 'Samir',
+    age: 25,
+    location: 'East Coast',
+    specialty: 'Fantasy Football',
+    favLanguage: 'React',
+    catchPhrase: 'Hmu if you need help',
+    gradClassName: 'Pending',
+    favInstructor: 'Pace',
+})
+
+console.log(samir.debugsCode(raudel2, 'Javascript II'));
