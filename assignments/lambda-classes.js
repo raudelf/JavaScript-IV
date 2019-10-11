@@ -28,6 +28,13 @@ class Instructor extends Person {
     grade(obj, subj) {
         return `${obj.name} receives a perfect score on ${subj}`
     }
+
+    score(obj) {
+            let min = Math.ceil(1);
+            let max = Math.floor(100);
+            let random = Math.floor(Math.random() * (max - min + 1)) + min;
+            return obj.grade +- random;
+    }
 }
 
 class Student extends Person{
@@ -36,6 +43,7 @@ class Student extends Person{
         this.previousBackground = sAttrs.previousBackground;
         this.className = sAttrs.className;
         this.favSubjects = sAttrs.favSubjects;
+        this.grade = sAttrs.grade;
     }
 
     listsSubjects() {
@@ -91,7 +99,8 @@ let raudel2 = new Student({
     location: 'Chicago',
     previousBackground: 'Graphic Designer',
     className: 'WBPT11',
-    favSubjects: ['HTML', 'CSS', 'Javascript']
+    favSubjects: ['HTML', 'CSS', 'Javascript'],
+    grade: 85
 })
 
 let rob = new Student({
@@ -100,7 +109,8 @@ let rob = new Student({
     location: 'Bolingbrook',
     previousBackground: 'Newspaper Editor',
     className: 'Dominican Uni',
-    favSubjects: ['Typography', 'Creative Writing', 'Painting']
+    favSubjects: ['Typography', 'Creative Writing', 'Painting'],
+    grade: 90
 })
 
 let samir = new ProjectManager({
@@ -144,3 +154,7 @@ console.log(samir.standUp('The Samir Channel'));
 console.log(samir.debugsCode(raudel2, 'Javascript II'));
 console.log(erik.standUp('DU19'));
 console.log(erik.debugsCode(rob, 'Creative Syntax'));
+
+//Stretch
+console.log(pace.score(raudel2));
+console.log(erik.score(rob));
