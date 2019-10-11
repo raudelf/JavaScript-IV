@@ -72,8 +72,17 @@ let pace = new Instructor({
     age: 28,
     location: 'California',
     specialty: 'Front-End Dev',
-    favLanguage: 'Spanish',
+    favLanguage: 'Javascript',
     catchPhrase: 'Don\'t forget the homies'
+})
+
+let dave = new Instructor({
+    name: 'Dave',
+    age: 32,
+    location: 'Oak Park',
+    specialty: 'Typography',
+    favLanguage: 'Design',
+    catchPhrase: 'That is lit!'
 })
 
 let raudel2 = new Student({
@@ -82,7 +91,17 @@ let raudel2 = new Student({
     location: 'Chicago',
     previousBackground: 'Graphic Designer',
     className: 'WBPT11',
-    favSubjects: ['HTML', 'CSS', 'Javascript'],})
+    favSubjects: ['HTML', 'CSS', 'Javascript']
+})
+
+let rob = new Student({
+    name: 'Rob',
+    age: 22,
+    location: 'Bolingbrook',
+    previousBackground: 'Newspaper Editor',
+    className: 'Dominican Uni',
+    favSubjects: ['Typography', 'Creative Writing', 'Painting']
+})
 
 let samir = new ProjectManager({
     name: 'Samir',
@@ -95,4 +114,33 @@ let samir = new ProjectManager({
     favInstructor: 'Pace',
 })
 
+let erik = new ProjectManager({
+    name: 'Erik',
+    age: 23,
+    location: 'Chicago',
+    specialty: 'Nutritional Science',
+    favLanguage: 'Science',
+    catchPhrase: 'You guys are wild!',
+    gradClassName: 'North West',
+    favInstructor: 'Life',
+})
+
+//Instructor Outputs
+console.log("Pace: " + pace.demo('Javascript!'));
+console.log("Pace: " + pace.grade(raudel2, 'Javascript IV!'));
+console.log("Dave: " + dave.demo('White space.'));
+console.log("Dave: " + dave.grade(rob, 'my Typography class!'));
+
+//Student Outputs
+console.log("My Favorite Subjects: " + raudel2.listsSubjects());
+console.log(raudel2.PRAssignment('Javascript III'));
+console.log(raudel2.sprintChallenge('the Javascript Section'));
+console.log("Rob's Favorite Subjects: " + rob.listsSubjects());
+console.log(rob.PRAssignment('Creative Writing'));
+console.log(rob.sprintChallenge('Painting'));
+
+//Project Manager Outputs
+console.log(samir.standUp('The Samir Channel'));
 console.log(samir.debugsCode(raudel2, 'Javascript II'));
+console.log(erik.standUp('DU19'));
+console.log(erik.debugsCode(rob, 'Creative Syntax'));
