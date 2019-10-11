@@ -59,10 +59,22 @@ class Student extends Person{
     }
 }
 
-// let raudel = new Student({
+// let raudel2 = new Student({
 //     name: 'Raudel',
 //     age: 22,
 //     location: 'Chicago',
 //     previousBackground: 'Graphic Designer',
 //     className: 'WBPT11',
 //     favSubjects: ['HTML', 'CSS', 'Javascript'],})
+
+class ProjectManager extends Instructor {
+    constructor(pmAttrs) {
+        super(pmAttrs);
+        this.gradClassName = pmAttrs.gradClassName;
+        this.favInstructor = pmAttrs.favInstructor;
+    }
+    
+    standUp() {
+        
+    }
+}
